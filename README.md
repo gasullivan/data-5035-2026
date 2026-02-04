@@ -3,3 +3,4 @@ Data Engineering
 
 - [X] Link to SnowFlake
 - [X] Link to Databricks
+- x capone is solved
