@@ -6,7 +6,10 @@
       "runtime": "V2.2-CPU-PY3.12",
       "computePool": "SYSTEM_COMPUTE_POOL_CPU",
       "idleTimeoutSec": 86400,
-      "externalAccessIntegrations": [],
+      "externalAccessIntegrations": [
+        "WASHU_INTEGRATION",
+        "OPEN_METEO_INTEGRATION"
+      ],
       "isGpuRuntime": false,
       "pythonVersion": "3.12"
     }
