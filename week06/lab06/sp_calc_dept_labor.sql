@@ -1,5 +1,8 @@
 /*******************************************************************************
  * Stored Procedure: CALC_DEPT_LABOR
+<<<<<<< local
+ * Schema: DATA5035.GSULLIVAN (changed from INSTRUCTOR1)
+=======
  * Schema: DATA5035.INSTRUCTOR1
  * 
  * Calculate department labor costs with day-based proration for mid-year hires.
@@ -14,9 +17,15 @@
  *   - Employees hired before the specified year get full annual salary
  *   - Employees hired during the year get (days_remaining/days_in_year) * salary
  *   - Employees hired after the year contribute $0
+>>>>>>> remote
  ******************************************************************************/
 
+<<<<<<< local
+-- CREATE OR REPLACE PROCEDURE DATA5035.GSULLIVAN.CALC_DEPT_LABOR(
+CREATE OR REPLACE PROCEDURE SNOWBEARAIR_DB.GSULLIVAN.CALC_DEPT_LABOR(
+=======
 CREATE OR REPLACE PROCEDURE DATA5035.INSTRUCTOR1.CALC_DEPT_LABOR(
+>>>>>>> remote
     EMPLOYEES_TABLE VARCHAR,
     POSITIONS_TABLE VARCHAR,
     YEAR NUMBER(38,0),
@@ -64,9 +73,12 @@ def run(session, employees_table: str, positions_table: str, year: int, output_t
     )
     
     # Calculate prorated salary based on hire date
+<<<<<<< local
+=======
     # - If hired before year start: full salary (days_in_year / days_in_year)
     # - If hired during year: (days from hire to year end + 1) / days_in_year
     # - If hired after year end: 0
+>>>>>>> remote
     prorated_df = joined_df.with_column(
         "DAYS_WORKED",
         when(
@@ -97,3 +109,6 @@ def run(session, employees_table: str, positions_table: str, year: int, output_t
     row_count = session.table(output_table).count()
     return f"CALC_DEPT_LABOR completed: {row_count} departments processed for year {year}"
 ';
+<<<<<<< local
+=======
+>>>>>>> remote

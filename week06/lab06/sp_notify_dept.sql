@@ -17,7 +17,11 @@
  *   - created_at (timestamp)
  ******************************************************************************/
 
+<<<<<<< local
+CREATE OR REPLACE PROCEDURE SNOWBEARAIR_DB.GSULLIVAN.NOTIFY_DEPT(
+=======
 CREATE OR REPLACE PROCEDURE DATA5035.INSTRUCTOR1.NOTIFY_DEPT(
+>>>>>>> remote
     REPORT_TABLE VARCHAR,
     EMAIL_ADDRESS VARCHAR,
     OUTPUT_TABLE VARCHAR

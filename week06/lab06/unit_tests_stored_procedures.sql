@@ -1,6 +1,10 @@
 /*******************************************************************************
  * UNIT TESTS FOR BUDGET MONITORING STORED PROCEDURES
+<<<<<<< local
+ * Schema: SNOWBEARAIR_DB.GSULLIVAN
+=======
  * Schema: DATA5035.INSTRUCTOR1
+>>>>>>> remote
  * 
  * These tests validate the three stored procedures:
  *   1. CALC_DEPT_LABOR - Calculate prorated department labor costs
@@ -9,8 +13,13 @@
  ******************************************************************************/
 
 -- Set context
+<<<<<<< local
+USE DATABASE SNOWBEARAIR_DB;
+USE SCHEMA GSULLIVAN;
+=======
 USE DATABASE DATA5035;
 USE SCHEMA INSTRUCTOR1;
+>>>>>>> remote
 
 /*******************************************************************************
  * TEST 1: CALC_DEPT_LABOR
@@ -49,10 +58,19 @@ INSERT INTO TEST_POSITIONS VALUES
 
 -- 1c. Execute the procedure
 CALL CALC_DEPT_LABOR(
+<<<<<<< local
+    'SNOWBEARAIR_DB.GSULLIVAN.TEST_EMPLOYEES',
+    'SNOWBEARAIR_DB.GSULLIVAN.TEST_POSITIONS',
+=======
     'DATA5035.INSTRUCTOR1.TEST_EMPLOYEES',
     'DATA5035.INSTRUCTOR1.TEST_POSITIONS',
+>>>>>>> remote
     2025,
+<<<<<<< local
+    'SNOWBEARAIR_DB.GSULLIVAN.TEST_LABOR_OUTPUT'
+=======
     'DATA5035.INSTRUCTOR1.TEST_LABOR_OUTPUT'
+>>>>>>> remote
 );
 
 -- 1d. Validate results
@@ -121,9 +139,15 @@ INSERT INTO TEST_BUDGET VALUES
 
 -- 2c. Execute the procedure
 CALL CALC_DEPT_TO_BUDGET(
+<<<<<<< local
+    'SNOWBEARAIR_DB.GSULLIVAN.TEST_ACTUAL',
+    'SNOWBEARAIR_DB.GSULLIVAN.TEST_BUDGET',
+    'SNOWBEARAIR_DB.GSULLIVAN.TEST_BUDGET_OUTPUT'
+=======
     'DATA5035.INSTRUCTOR1.TEST_ACTUAL',
     'DATA5035.INSTRUCTOR1.TEST_BUDGET',
     'DATA5035.INSTRUCTOR1.TEST_BUDGET_OUTPUT'
+>>>>>>> remote
 );
 
 -- 2d. Validate results
@@ -180,9 +204,17 @@ INSERT INTO TEST_REPORT VALUES
 
 -- 3b. Execute the procedure
 CALL NOTIFY_DEPT(
+<<<<<<< local
+    'SNOWBEARAIR_DB.GSULLIVAN.TEST_REPORT',
+=======
     'DATA5035.INSTRUCTOR1.TEST_REPORT',
+>>>>>>> remote
     'test@example.com',
+<<<<<<< local
+    'SNOWBEARAIR_DB.GSULLIVAN.TEST_NOTIFY_OUTPUT'
+=======
     'DATA5035.INSTRUCTOR1.TEST_NOTIFY_OUTPUT'
+>>>>>>> remote
 );
 
 -- 3c. Validate results
@@ -233,19 +265,39 @@ CALL CALC_DEPT_LABOR(
     'DATA5035.SPRING26.EMPLOYEES',
     'DATA5035.SPRING26.POSITIONS',
     2025,
+<<<<<<< local
+    'SNOWBEARAIR_DB.GSULLIVAN.DEPT_LABOR_ACTUAL'
+=======
     'DATA5035.INSTRUCTOR1.DEPT_LABOR_ACTUAL'
+>>>>>>> remote
 );
 
 CALL CALC_DEPT_TO_BUDGET(
+<<<<<<< local
+    'SNOWBEARAIR_DB.GSULLIVAN.DEPT_LABOR_ACTUAL',
+=======
     'DATA5035.INSTRUCTOR1.DEPT_LABOR_ACTUAL',
+>>>>>>> remote
     'DATA5035.SPRING26.DEPARTMENTS',
+<<<<<<< local
+    'SNOWBEARAIR_DB.GSULLIVAN.DEPT_BUDGET_STATUS'
+=======
     'DATA5035.INSTRUCTOR1.DEPT_BUDGET_STATUS'
+>>>>>>> remote
 );
 
 CALL NOTIFY_DEPT(
+<<<<<<< local
+    'SNOWBEARAIR_DB.GSULLIVAN.DEPT_BUDGET_STATUS',
+=======
     'DATA5035.INSTRUCTOR1.DEPT_BUDGET_STATUS',
+>>>>>>> remote
     'pboal@wustl.edu',
+<<<<<<< local
+    'SNOWBEARAIR_DB.GSULLIVAN.DEPT_NOTIFICATIONS'
+=======
     'DATA5035.INSTRUCTOR1.DEPT_NOTIFICATIONS'
+>>>>>>> remote
 );
 
 -- 4b. Validate pipeline results
@@ -291,3 +343,6 @@ DROP TABLE IF EXISTS TEST_REPORT;
 DROP TABLE IF EXISTS TEST_NOTIFY_OUTPUT;
 
 SELECT 'All unit tests completed!' AS status;
+<<<<<<< local
+=======
+>>>>>>> remote

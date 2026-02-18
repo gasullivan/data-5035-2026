@@ -15,7 +15,11 @@
  *   - MATCHED: actual == budget
  ******************************************************************************/
 
+<<<<<<< local
+CREATE OR REPLACE PROCEDURE SNOWBEARAIR_DB.GSULLIVAN.CALC_DEPT_TO_BUDGET(
+=======
 CREATE OR REPLACE PROCEDURE DATA5035.INSTRUCTOR1.CALC_DEPT_TO_BUDGET(
+>>>>>>> remote
     ACTUAL_TABLE VARCHAR,
     BUDGET_TABLE VARCHAR,
     OUTPUT_TABLE VARCHAR
